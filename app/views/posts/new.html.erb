@@ -1,0 +1,37 @@
+<h3>Post Form</h3>
+
+<%= form_tag posts_path do %>
+<!-- <form action="<%= posts_path %>" method="POST"> -->
+    <label>Post title:</label><br>
+    <%= text_field_tag :'post[title]' %><br>
+
+    <label>Post description:</label><br>
+    <%= text_area_tag :'post[description]' %><br>
+
+    <%= submit_tag "Submit Post" %>
+    
+    <!-- <label>Post title:</label><br>
+    <input type="text" id="post_title" name="post[title]"><br>
+
+    <label>Post description:</label><br>
+    <textarea id="post_description" name="post[description]"></textarea><br>
+
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <input type="submit" value="Submit Post"> -->
+<% end %>
+
+<!-- name= attributes are nested hashes; 
+it is used as the key within the params 
+at which the netered data is stored -->
+
+<!-- Post title would look like this as 
+a params:  params[:post][:title]  -->
+
+<!-- <%= params.inspect %> -->
+<!-- this prints out params to the page -->
+
+
+
+<!-- authenticity token is a helper integrated 
+into the form as a hidden field.
+It ensures protection/security from other sites. -->
